@@ -1,0 +1,212 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Sample API",
+    "description" : "Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.",
+    "version" : "0.1.9"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8001/",
+    "description" : "Optional server description, e.g. Main (production) server"
+  } ],
+  "paths" : {
+    "/maxco2_single" : {
+      "get" : {
+        "summary" : "Obtiene todos los registros con CO2 maximo.",
+        "description" : "Optional extended description in CommonMark or HTML.",
+        "responses" : {
+          "200" : {
+            "description" : "Arreglo JSON de Resultados",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "date" : {
+                        "type" : "string"
+                      },
+                      "co2" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/maxco2_group" : {
+      "get" : {
+        "summary" : "Agrupa los maximos de CO2 por hora fecha y despliega frecuencia en esos periodos.",
+        "description" : "Optional extended description in CommonMark or HTML.",
+        "responses" : {
+          "200" : {
+            "description" : "Arreglo JSON con resultados",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "fecha" : {
+                        "type" : "string"
+                      },
+                      "hora" : {
+                        "type" : "string"
+                      },
+                      "mes" : {
+                        "type" : "string"
+                      },
+                      "co2" : {
+                        "type" : "string"
+                      },
+                      "frecuencia" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/maxhumid" : {
+      "get" : {
+        "summary" : "Obtiene maximos de humedad agrupados por fecha.",
+        "description" : "Optional extended description in CommonMark or HTML.",
+        "responses" : {
+          "200" : {
+            "description" : "Arreglo JSON con resultados",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "fecha" : {
+                        "type" : "string"
+                      },
+                      "hora" : {
+                        "type" : "string"
+                      },
+                      "humidity" : {
+                        "type" : "string"
+                      },
+                      "cuenta" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/maxtemp_mes" : {
+      "get" : {
+        "summary" : "Muestra los maximos de temperatura en un mes especifico.",
+        "description" : "Optional extended description in CommonMark or HTML.",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "mes",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          },
+          "description" : "Mes deseado para mostrar datos"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Arreglo JSON con resultados",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "fecha" : {
+                        "type" : "string"
+                      },
+                      "hora" : {
+                        "type" : "string"
+                      },
+                      "mes" : {
+                        "type" : "string"
+                      },
+                      "co2" : {
+                        "type" : "string"
+                      },
+                      "frecuencia" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Parametro faltante"
+          }
+        }
+      }
+    },
+    "/file" : {
+      "post" : {
+        "summary" : "Subir archivo para poblar la BD",
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "orderId" : {
+                    "type" : "integer"
+                  },
+                  "userId" : {
+                    "type" : "integer"
+                  },
+                  "fileName" : {
+                    "type" : "string",
+                    "format" : "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Arreglo JSON con resultados",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "result" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
