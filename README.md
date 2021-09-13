@@ -33,6 +33,8 @@ La documentación OpenApi se mostrará en la ruta `http://localhost:8081`
  
  
  
+ 
+ 
  # iot-api
 API Proof of Concept ( Falcon - Swagger - TimescaleDB - Docker - Docker Compose )
 
