@@ -8,9 +8,8 @@ Prueba de Concepto de API ( Falcon - Swagger - TimescaleDB - Docker - Docker Com
 
 Instrucciones para instalar dockers:
 
- - Descargar Carpeta `/dist` y colocarla en la ruta del usuario `~/`, debe quedar así:   `~/dist`
- - Descargar el archivo `docker-compose.yaml` en `~/`
- - Ejecutar el comando `docker-compose up -d`.   Todas las dependencias serán descargadas.
+ - Pull de todos los archivos hacia `~/`
+ - Ejecutar el comando `docker-compose up -d`.   Todas las dependencias serán descargadas automaticamente de Docker Hub
  
  Con esto se tendrán corriendo 3 contenedores con las siguientes imagenes docker:
  
@@ -44,9 +43,8 @@ API Proof of Concept ( Falcon - Swagger - TimescaleDB - Docker - Docker Compose 
 
 Directions:
 
- - Pull `/dist` into the path `~/`, like this   `~/dist`
- - Pull `docker-compose.yaml` into `~/`
- - Run the command `docker-compose up -d`.   Every dependency will be pulled from Docker Hub
+ - From this Github repo Pull into `~/`
+ - Run the command `docker-compose up -d`.   Every dependency will be automatically pulled from Docker Hub
  
 Afterwards three cointainers with the following images will be up:
  
