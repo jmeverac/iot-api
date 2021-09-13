@@ -1,5 +1,5 @@
 # iot-api
-Repositorio para Api / Prueba de Concepto de API ( Falcon - Swagger - TimescaleDB - Docker - Docker Compose )
+Prueba de Concepto de API ( Falcon - Swagger - TimescaleDB - Docker - Docker Compose )
 
 
 
