@@ -12,11 +12,11 @@ Instrucciones para instalar dockers:
  - Descargar el archivo `docker-compose.yaml` en `~/`
  - Ejecutar el comando `docker-compose up -d`.   Todas las dependencias serán descargadas.
  
- Con esto se tendrán corriendo 3 dockers:
+ Con esto se tendrán corriendo 3 contenedores con las siguientes imagenes docker:
  
-La API   `jmeverac/iot-api`
-La base de datos TimescaleDB  `timescale/timescaledb`
-Swagger-UI `swaggerapi/swagger-ui`
+La API   `jmeverac/iot-api`, 
+la base de datos TimescaleDB  `timescale/timescaledb`
+y Swagger-UI `swaggerapi/swagger-ui`
 
 ## Ejecucion y Pruebas
 
