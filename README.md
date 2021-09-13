@@ -26,6 +26,6 @@ La documentación OpenApi se mostrará en la ruta `http://localhost:8081`
  
  Se puede realizar esta acción con POSTMAN como se indica
 
-[enter link description here](http://localhost/imagen.jpg)
+[enter link description here](https://github.com/jmeverac/iot-api/blob/main/Postman-file.png)
 
  Posteriormente conectar a los demás Endpoints
